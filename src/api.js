@@ -12,7 +12,7 @@ const fetchReservations = (id) => {
     return axios.get(`/api/users/${id}/reservations`);
 }
 
-const deleteReservation = (id) =>{
+const deleteReservation = (reservationId) =>{
     return axios.delete(`/api/reservations/${reservationId}`);
 }
 
