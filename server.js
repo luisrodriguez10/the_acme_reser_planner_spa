@@ -104,7 +104,8 @@ const syncAndSeed = async()=> {
 
 const User = conn.define('user', {
   name: {
-    type: STRING
+    type: STRING,
+    allowNull: false
   }
 });
 const Reservation = conn.define('reservation', {});
@@ -140,6 +141,15 @@ app.get('/api/users', async(req, res, next)=> {
     next(ex);
   }
 });
+
+app.post('/api/users', async(req, res, next)=> {
+    try {
+      res.status(201).send(await User.create(req.body));
+    }
+    catch(ex){
+      next(ex);
+    }
+  });
 
 app.get('/api/restaurants', async(req, res, next)=> {
   try {

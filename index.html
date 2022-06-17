@@ -13,12 +13,19 @@
       section {
         flex: 1;
       }
-      .selected{
+      #users-list .selected{
           padding: 0.25rem;
           background-color: dodgerblue;
       }
-      .selected a{
+      #users-list .selected a{
           color: cornsilk;
+      }
+      #restaurants-list .selected{
+          padding: 0.25rem;
+          background-color: cornsilk;
+      }
+      #restaurants-list .selected a{
+          color: dodgerblue;
       }
       #restaurants-list{
           cursor: pointer;
@@ -26,14 +33,27 @@
       #reservations-list{
           cursor: pointer;
       }
+      form{
+          border: solid 1px dodgerblue;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+      }
+      form > *{
+          margin: 0.25rem;
+      }
     </style>
   </head>
   <body>
     <h1>Acme Reservation Planner JS</h1>
     <main>
       <section>
-        <h2>Users</h2>
+        <h2><a href="#">Users</a></h2>
         <ul id="users-list"></ul>
+        <form action="">
+            <input type="text">
+            <button>Create a new user</button>
+        </form>
       </section>
       <section>
         <h2>Restaurants</h2>
